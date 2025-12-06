@@ -1,0 +1,64 @@
+{
+  "address": "0xe9725764aC1175703B488c8278FbcABaFE66D116",
+  "abi": [
+    {
+      "inputs": [{"internalType":"bytes32","name":"_commitHash","type":"bytes32"}],
+      "name":"commit",
+      "outputs":[{"internalType":"uint256","name":"","type":"uint256"}],
+      "stateMutability":"payable",
+      "type":"function"
+    },
+    {
+      "inputs":[{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"bytes","name":"preimage","type":"bytes"}],
+      "name":"reveal",
+      "outputs":[],
+      "stateMutability":"nonpayable",
+      "type":"function"
+    },
+    {
+      "inputs":[{"internalType":"uint256","name":"id","type":"uint256"}],
+      "name":"validate",
+      "outputs":[],
+      "stateMutability":"nonpayable",
+      "type":"function"
+    },
+    {
+      "inputs":[{"internalType":"uint256","name":"id","type":"uint256"}],
+      "name":"settle",
+      "outputs":[],
+      "stateMutability":"nonpayable",
+      "type":"function"
+    },
+    {
+      "inputs":[{"internalType":"uint256","name":"id","type":"uint256"}],
+      "name":"finalize",
+      "outputs":[],
+      "stateMutability":"nonpayable",
+      "type":"function"
+    },
+    {
+      "inputs":[{"internalType":"uint256","name":"id","type":"uint256"}],
+      "name":"getSettlement",
+      "outputs":[
+        {"components":[
+          {"internalType":"address","name":"initiator","type":"address"},
+          {"internalType":"bytes32","name":"commitHash","type":"bytes32"},
+          {"internalType":"bytes","name":"revealed","type":"bytes"},
+          {"internalType":"uint8","name":"state","type":"uint8"},
+          {"internalType":"uint256","name":"commitBlock","type":"uint256"},
+          {"internalType":"uint256","name":"revealBlock","type":"uint256"},
+          {"internalType":"uint256","name":"validatedBlock","type":"uint256"},
+          {"internalType":"uint256","name":"settledBlock","type":"uint256"},
+          {"internalType":"uint256","name":"bond","type":"uint256"}
+        ],"internalType":"struct SettleX.Settlement","name":"","type":"tuple"}
+      ],
+      "stateMutability":"view",
+      "type":"function"
+    },
+    { "inputs": [], "name": "nextId", "outputs":[{"internalType":"uint256","name":"","type":"uint256"}], "stateMutability":"view","type":"function" },
+    { "inputs":[],"name":"REVEAL_WINDOW","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},
+    { "inputs":[],"name":"VALIDATION_DELAY","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},
+    { "inputs":[],"name":"VALIDATION_WINDOW","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},
+    { "inputs":[],"name":"FINALIZATION_DELAY","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"}
+  ]
+}

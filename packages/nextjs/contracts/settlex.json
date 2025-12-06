@@ -1,0 +1,108 @@
+{
+  "address": "0x7967092C94FAF440C8c4cFD271B8079554F4Ee1C",
+  "abi": [
+    {
+      "inputs": [{"internalType": "address", "name": "_primary", "type": "address"}, {"internalType": "address", "name": "_secondary", "type": "address"}],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [{"internalType": "bytes32", "name": "_commitHash", "type": "bytes32"}],
+      "name": "commit",
+      "outputs": [{"internalType": "uint256", "name": "", "type": "uint256"}],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [{"internalType": "uint256", "name": "id", "type": "uint256"}, {"internalType": "bytes", "name": "preimage", "type": "bytes"}],
+      "name": "reveal",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [{"internalType": "uint256", "name": "id", "type": "uint256"}],
+      "name": "validate",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [{"internalType": "uint256", "name": "id", "type": "uint256"}],
+      "name": "settle",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [{"internalType": "uint256", "name": "id", "type": "uint256"}],
+      "name": "getSettlement",
+      "outputs": [
+        {
+          "components": [
+            {"internalType": "address", "name": "initiator", "type": "address"},
+            {"internalType": "bytes32", "name": "commitHash", "type": "bytes32"},
+            {"internalType": "bytes", "name": "revealed", "type": "bytes"},
+            {"internalType": "uint8", "name": "state", "type": "uint8"},
+            {"internalType": "uint256", "name": "commitBlock", "type": "uint256"},
+            {"internalType": "uint256", "name": "revealBlock", "type": "uint256"},
+            {"internalType": "uint256", "name": "validatedBlock", "type": "uint256"},
+            {"internalType": "uint256", "name": "settledBlock", "type": "uint256"},
+            {"internalType": "uint256", "name": "bond", "type": "uint256"}
+          ],
+          "internalType": "struct SettleX.Settlement",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [{"internalType": "uint256", "name": "id", "type": "uint256"}],
+      "name": "finalize",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [{"internalType": "uint256", "name": "id", "type": "uint256"}],
+      "name": "cancelIfRevealMissed",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "primaryOracle",
+      "outputs": [{"internalType": "contract AggregatorV3Interface", "name": "", "type": "address"}],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "secondaryOracle",
+      "outputs": [{"internalType": "contract AggregatorV3Interface", "name": "", "type": "address"}],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "anonymous": false,
+      "inputs": [{"indexed": true, "internalType": "uint256", "name": "id", "type": "uint256"}, {"indexed": true, "internalType": "address", "name": "who", "type": "address"}, {"indexed": false, "internalType": "bytes32", "name": "commitHash", "type": "bytes32"}, {"indexed": false, "internalType": "uint256", "name": "bond", "type": "uint256"}],
+      "name": "Committed",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [{"indexed": true, "internalType": "uint256", "name": "id", "type": "uint256"}, {"indexed": false, "internalType": "string", "name": "reason", "type": "string"}],
+      "name": "Disputed",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [{"indexed": true, "internalType": "uint256", "name": "id", "type": "uint256"}, {"indexed": false, "internalType": "int256", "name": "price", "type": "int256"}],
+      "name": "Validated",
+      "type": "event"
+    }
+  ]
+}
